@@ -82,7 +82,7 @@ BEGIN {
 
 		# notify-send 的时间参数是毫秒，所以这里转换
 		second = 1000
-    line_count > 2 ? line_count * 4 * 1000 : 12 * 1000
+    line_count > 2 ? line_count * 4 * second : 12 * second
   end
 
 	# 系统语言，默认翻译的目标语言
