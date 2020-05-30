@@ -1,0 +1,111 @@
+#! /usr/bin/ruby -w
+
+require 'rubygems'
+require 'net/http'
+require 'uri'
+require 'json'
+require 'optparse'
+
+
+VERSION = '3.0.2'
+
+word = ARGV.last || `xsel`
+
+translator = Struct.new(:from, :to, :word)
+									 .new(:auto, lang, word)
+
+OptionParser.new do |opts|
+	opts.on('-f', '--from <language>', command_description(:from)) do |language|
+		translator.from = language
+	end
+
+	opts.on('-h', '--help', command_description(:help)) do
+		puts opts
+		exit
+	end
+
+	opts.on('-t', '--to <language>', command_description(:to)) do |language|
+		translator.to = language
+	end
+
+	opts.on('-v', '--version', command_description(:version)) do
+		puts VERSION
+		exit
+	end
+
+	opts.parse!
+end
+
+api = 'http://fy.iciba.com/ajax.php'
+params = {
+	a: :fy,
+	f: translator.from,
+	t: translator.to,
+	w: translator.word
+}
+
+response = http_get(api, params)
+
+puts response.body
+
+content = parse_response(response)
+
+# 翻译结果
+res = content["out"] || content["word_mean"].map!{|mean| mean.gsub(";", "; ")}.join('\n')
+
+# 翻译文本消息停留时间
+msg_expire = msg_expire(content)
+
+`notify-send -t #{msg_expire} "$(echo -e "#{res}")"`
+
+BEGIN {
+  # 发送 get 请求
+  def http_get(url, params = {})
+    uri = URI.parse(url)
+    uri.query = URI.encode_www_form(params)
+
+    http = Net::HTTP.new(uri.host, uri.port)
+
+		puts uri.query
+    request = Net::HTTP::Get.new(uri.request_uri)
+    http.request(request)
+  end
+
+  # 解析响应
+  def parse_response(response)
+    JSON.parse(response.body)["content"]
+  end
+
+  # 翻译消息停留时间
+  def msg_expire(content)
+    line_count = content["word_mean"] ? content["word_mean"].count : 1
+
+		# notify-send 的时间参数是毫秒，所以这里转换
+		second = 1000
+    line_count > 2 ? line_count * 4 * 1000 : 12 * 1000
+  end
+
+	# 系统语言，默认翻译的目标语言
+	def lang
+		@lang ||= ENV['LANG'].split('_')[0].to_sym
+	end
+
+	def command_description(option)
+		lang = lang == :zh ? :zh : :en
+
+		{
+			zh: {
+				from: '翻译的源语言',
+				help: '显示帮助文本',
+				to: '翻译的目标语言',
+				version: '显示版本号'
+			},
+			en: {
+				from: 'Source language for translate',
+				help: 'Show help',
+				to: 'Target language for translate',
+				version: 'Show Version'
+			}
+		}[lang][option]
+	end
+}
