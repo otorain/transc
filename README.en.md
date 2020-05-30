@@ -71,3 +71,5 @@ git clone https://github.com/otorain/transc.git ~/.transc
 
   2. translate from English to Chinese
     `transc "hello"`
+
+  3. translate from
