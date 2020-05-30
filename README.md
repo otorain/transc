@@ -9,12 +9,12 @@
 
   如果没有传递参数的话，它将会获取最近一次选中的文本内容进行翻译
 
-## [目录](#table_of_contents)
-- [安装](#install)
-- [使用](#use)
+## 目录
+- [安装](#安装)
+- [使用](#使用)
 
 
-## [安装](#install)
+## 安装
 #### 1. 克隆到`~/.transc`目录.
 
 ```bash
@@ -58,7 +58,7 @@ git clone https://github.com/otorain/transc.git ~/.transc
     $ sudo yum install ruby xsel
   ```
 
-## [使用](#use)
+## 使用
   在默认情况下，如果传入的是其它语言，则翻译为中文，如果传入的是中文，则翻译为英语，用法如下：
 
   ```bash
