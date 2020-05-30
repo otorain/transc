@@ -15,13 +15,13 @@
 
 
 ## [安装](#install)
-1. 克隆到`~/.transc`目录.
+#### 1. 克隆到`~/.transc`目录.
 
 ```bash
 git clone https://github.com/otorain/transc.git ~/.transc
 ```
 
-2. 添加`~/.transc`目录到`$PATH`变量中，以便直接使用命令
+### 2. 添加`~/.transc`目录到`$PATH`变量中，以便直接使用命令
   - for **Bash**
     ```bash
       $ echo 'export PATH="$HOME/.transc:$PATH"' >> ~/.bash_profile
@@ -41,7 +41,7 @@ git clone https://github.com/otorain/transc.git ~/.transc
       $ source ~/.zshrc
     ```
 
-3. 安装`Ruby`和`xsel`
+### 3. 安装`Ruby`和`xsel`
   - for **Arch Linux**
     ```bash
       $ sudo pacman -S ruby xsel
@@ -71,22 +71,22 @@ git clone https://github.com/otorain/transc.git ~/.transc
   - **-h** : 查看帮助
   - **-v** : 查看版本
 
-  1. 中文翻译为英语
+#### 1. 中文翻译为英语
     ```bash
     $ transc "你好"  # hello
     ```
 
-  2. 中文翻译为西班牙语
+#### 2. 中文翻译为西班牙语
     ```bash
     $ transc -t es "你好" # Hola
     ```
 
-  3. 英语翻译为中文
+#### 3. 英语翻译为中文
     ```bash
     $ transc "hello" # 你好
     ```
 
-  4. 韩语翻译为中文
+#### 4. 韩语翻译为中文
     ```bash
     $ transc "안녕하세요" # 你好
     ```
