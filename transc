@@ -46,8 +46,6 @@ params = {
 
 response = http_get(api, params)
 
-puts response.body
-
 content = parse_response(response)
 
 # 翻译结果
@@ -66,7 +64,6 @@ BEGIN {
 
     http = Net::HTTP.new(uri.host, uri.port)
 
-		puts uri.query
     request = Net::HTTP::Get.new(uri.request_uri)
     http.request(request)
   end
