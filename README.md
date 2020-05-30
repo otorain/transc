@@ -35,28 +35,28 @@ git clone https://github.com/otorain/transc.git ~/.transc
       $ source ~/.bashrc
     ```
   - for **zsh**
-    ```bash
-      $ echo 'export PATH="$HOME/.transc:$PATH"' >> ~/.zshrc
+  ```bash
+    $ echo 'export PATH="$HOME/.transc:$PATH"' >> ~/.zshrc
 
-      $ source ~/.zshrc
-    ```
+    $ source ~/.zshrc
+  ```
 
 #### 3. 安装`Ruby`和`xsel`
   - for **Arch Linux**
-    ```bash
-      $ sudo pacman -S ruby xsel
-    ```
+  ```bash
+    $ sudo pacman -S ruby xsel
+  ```
 
 
   - for **Ubuntu**, **Debian** or **Deepin**
-    ```bash
-      $ sudo apt-get install ruby xsel
-    ```
+  ```bash
+    $ sudo apt-get install ruby xsel
+  ```
 
   - for **CentOS** or **RedHat**
-    ```bash
-      $ sudo yum install ruby xsel
-    ```
+  ```bash
+    $ sudo yum install ruby xsel
+  ```
 
 ## [使用](#use)
   在默认情况下，如果传入的是其它语言，则翻译为中文，如果传入的是中文，则翻译为英语，用法如下：
@@ -72,21 +72,21 @@ git clone https://github.com/otorain/transc.git ~/.transc
   - **-v** : 查看版本
 
 #### 1. 中文翻译为英语
-    ```bash
-    $ transc "你好"  # hello
-    ```
+```bash
+  $ transc "你好"  # hello
+```
 
 #### 2. 中文翻译为西班牙语
-    ```bash
-    $ transc -t es "你好" # Hola
-    ```
+```bash
+  $ transc -t es "你好" # Hola
+```
 
 #### 3. 英语翻译为中文
-    ```bash
-    $ transc "hello" # 你好
-    ```
+```bash
+  $ transc "hello" # 你好
+```
 
 #### 4. 韩语翻译为中文
-    ```bash
-    $ transc "안녕하세요" # 你好
-    ```
+```bash
+  $ transc "안녕하세요" # 你好
+```
