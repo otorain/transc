@@ -54,7 +54,7 @@ res = content["out"] || content["word_mean"].map!{|mean| mean.gsub(";", "; ")}.j
 # 翻译文本消息停留时间
 msg_expire = msg_expire(content)
 
-`notify-send -t #{msg_expire} "$(echo -e "#{res}")"`
+`notify-send -t #{msg_expire} "$(echo -e '#{res}')"`
 
 BEGIN {
   # 发送 get 请求
@@ -104,6 +104,6 @@ BEGIN {
 				version: 'Show Version'
 			}
 		}[lang][option]
-		
+
 	end
 }
