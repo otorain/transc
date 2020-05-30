@@ -21,7 +21,7 @@
 git clone https://github.com/otorain/transc.git ~/.transc
 ```
 
-### 2. 添加`~/.transc`目录到`$PATH`变量中，以便直接使用命令
+#### 2. 添加`~/.transc`目录到`$PATH`变量中，以便直接使用命令
   - for **Bash**
     ```bash
       $ echo 'export PATH="$HOME/.transc:$PATH"' >> ~/.bash_profile
@@ -41,7 +41,7 @@ git clone https://github.com/otorain/transc.git ~/.transc
       $ source ~/.zshrc
     ```
 
-### 3. 安装`Ruby`和`xsel`
+#### 3. 安装`Ruby`和`xsel`
   - for **Arch Linux**
     ```bash
       $ sudo pacman -S ruby xsel
