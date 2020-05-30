@@ -3,16 +3,19 @@
 ![](https://img.shields.io/badge/license-MIT-green.svg) &nbsp;
 ![](https://img.shields.io/badge/version-3.0.2-green.svg)
 
-- [Introduction](#introduction)
-- [Install](#install)
-- [Use](#use)
 
-## [Introduction](#Introduction)
+# Transc
   This is a script for translate other language to Chinese, or otherwise. The translated result with print in system msg. It need internet connection.
 
   It accept a argument from command option, if not any argument was given, it will  try to get content you last selected.
 
-## Install
+## [Table of contents](#table_of_contents)
+- [Introduction](#introduction)
+- [Install](#install)
+- [Use](#use)
+
+
+## [Install](#install)
 1. Clone transc into `~/.transc` .
 git clone https://github.com/otorain/transc.git ~/.transc
 
