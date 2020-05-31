@@ -35,28 +35,28 @@ git clone https://github.com/otorain/transc.git ~/.transc
       $ source ~/.bashrc
     ```
   - for **zsh**
-  ```bash
-    $ echo 'export PATH="$HOME/.transc:$PATH"' >> ~/.zshrc
+    ```bash
+      $ echo 'export PATH="$HOME/.transc:$PATH"' >> ~/.zshrc
 
-    $ source ~/.zshrc
-  ```
+      $ source ~/.zshrc
+    ```
 
 #### 3. 安装`Ruby`和`xsel`
   - for **Arch Linux**
-  ```bash
-    $ sudo pacman -S ruby xsel
-  ```
+    ```bash
+      $ sudo pacman -S ruby xsel
+    ```
 
 
   - for **Ubuntu**, **Debian** or **Deepin**
-  ```bash
-    $ sudo apt-get install ruby xsel
-  ```
+    ```bash
+      $ sudo apt-get install ruby xsel
+    ```
 
   - for **CentOS** or **RedHat**
-  ```bash
-    $ sudo yum install ruby xsel
-  ```
+    ```bash
+      $ sudo yum install ruby xsel
+    ```
 
 ## 使用
   在默认情况下，如果传入的是其它语言，则翻译为中文，如果传入的是中文，则翻译为英语，用法如下：
