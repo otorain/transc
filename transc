@@ -1,18 +1,15 @@
 #! /usr/bin/ruby -w
 
-require 'rubygems'
 require 'net/http'
 require 'uri'
 require 'json'
 require 'optparse'
 
-
 VERSION = '3.0.2'
 
 word = ARGV.last || `xsel`
 
-translator = Struct.new(:from, :to, :word)
-									 .new(:auto, lang, word)
+translator = Struct.new(:from, :to, :word).new(:auto, :auto, word)
 
 OptionParser.new do |opts|
 	opts.on('-f', '--from <language>', command_description(:from)) do |language|
@@ -88,7 +85,7 @@ BEGIN {
 	end
 
 	def command_description(option)
-		lang = lang == :zh ? :zh : :en
+		language = lang == :zh ? :zh : :en
 
 		{
 			zh: {
@@ -103,7 +100,7 @@ BEGIN {
 				to: 'Target language for translate',
 				version: 'Show Version'
 			}
-		}[lang][option]
+		}[language][option]
 
 	end
 }
